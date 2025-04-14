@@ -1,0 +1,77 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px; /* 添加圆角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 更明显的阴影 */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* 更深的字体颜色 */
+}
+
+.question {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0; /* 添加边框 */
+}
+
+.question-label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px; /* 添加内边距 */
+  background: #f7f7f7; /* 添加背景色 */
+  border-radius: 5px; /* 添加圆角 */
+  transition: background-color 0.3s; /* 添加交互效果 */
+}
+
+.option:hover {
+  background: #eaeaea; /* 鼠标悬停效果 */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007aff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* 添加交互效果 */
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* 鼠标悬停效果 */
+}
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+}

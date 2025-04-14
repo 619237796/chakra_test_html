@@ -1,0 +1,9 @@
+/* ...existing code... */
+label {
+  color: #000000;
+}
+
+text {
+  color: #000000;
+}
+/* ...existing code... */

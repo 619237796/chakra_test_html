@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="result-box">
+    <text class="title">测算结果</text>
+    <view class="result-content">
+      <canvas canvas-id="chakraCanvas" style="width: 300px; height: 300px;"></canvas>
+    </view>
+    <button class="back-button" bindtap="goBack">返回</button>
+  </view>
+</view>

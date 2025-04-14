@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脉轮测算</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); /* 添加背景图 */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* 设置字体颜色为白色 */
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .questions-container {
+            display: block; /* 改为单列布局 */
+            margin-top: 20px;
+        }
+        .question {
+            background: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px; /* 添加间距 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            font-size: 1.2em;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #4CAF50; /* 按钮背景色 */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049; /* 按钮悬停效果 */
+        }
+        .error-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+        .jump-button {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+        }
+        .jump-button:hover {
+            background-color: #e63939;
+        }
+        .error {
+            color: #ff4d4d;
+            font-size: 1em;
+        }
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #backToTop:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>脉轮测算</h1>
+    <form id="chakraForm">
+        <div class="questions-container">
+            <div class="question">
+                <label>您是否感到精力充沛？</label><br>
+                <label class="option"><input type="radio" name="q1" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q1" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q1" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到情绪稳定？</label><br>
+                <label class="option"><input type="radio" name="q2" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q2" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q2" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到内心平静？</label><br>
+                <label class="option"><input type="radio" name="q3" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q3" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q3" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到与他人沟通顺畅？</label><br>
+                <label class="option"><input type="radio" name="q4" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q4" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q4" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到身体健康？</label><br>
+                <label class="option"><input type="radio" name="q5" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q5" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q5" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到生活充满激情？</label><br>
+                <label class="option"><input type="radio" name="q6" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q6" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q6" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到自信？</label><br>
+                <label class="option"><input type="radio" name="q7" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q7" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q7" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到内心充满爱？</label><br>
+                <label class="option"><input type="radio" name="q8" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q8" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q8" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到表达能力强？</label><br>
+                <label class="option"><input type="radio" name="q9" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q9" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q9" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到直觉敏锐？</label><br>
+                <label class="option"><input type="radio" name="q10" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q10" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q10" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到与自然和谐相处？</label><br>
+                <label class="option"><input type="radio" name="q11" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q11" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q11" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到生活有意义？</label><br>
+                <label class="option"><input type="radio" name="q12" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q12" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q12" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到内心平衡？</label><br>
+                <label class="option"><input type="radio" name="q13" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q13" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q13" value="1"> 否</label>
+            </div>
+            <div class="question">
+                <label>您是否感到与宇宙连接？</label><br>
+                <label class="option"><input type="radio" name="q14" value="10" required> 是</label>
+                <label class="option"><input type="radio" name="q14" value="5"> 一般</label>
+                <label class="option"><input type="radio" name="q14" value="1"> 否</label>
+            </div>
+        </div>
+        <div id="error" class="error-container">
+            <button id="jumpToUnanswered" class="jump-button" style="display: none;" onclick="jumpToUnanswered()">跳转到未答问题</button>
+            <span class="error"></span>
+        </div>
+        <button type="button" onclick="calculateChakra()">提交</button>
+    </form>
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+    <script>
+        function calculateChakra() {
+            const form = document.getElementById('chakraForm');
+            const formData = new FormData(form);
+            const errorDiv = document.querySelector('.error');
+            const jumpButton = document.getElementById('jumpToUnanswered');
+
+            // 检查是否所有问题都已选择
+            const questions = form.querySelectorAll('.question');
+            let unansweredIndex = -1;
+            for (let i = 0; i < questions.length; i++) {
+                const inputs = questions[i].querySelectorAll('input[type="radio"]');
+                const selected = Array.from(inputs).some(input => input.checked);
+                if (!selected) {
+                    unansweredIndex = i;
+                    break;
+                }
+            }
+
+            if (unansweredIndex !== -1) {
+                errorDiv.innerText = "请回答所有问题后再提交！";
+                jumpButton.style.display = 'inline-block';
+                jumpButton.setAttribute('data-index', unansweredIndex);
+                return;
+            }
+
+            errorDiv.innerText = ""; // 清除错误提示
+            jumpButton.style.display = 'none'; // 隐藏跳转按钮
+
+            let total = 0;
+            let count = 0;
+            for (let value of formData.values()) {
+                total += parseInt(value, 10);
+                count++;
+            }
+
+            const average = (total / count).toFixed(2);
+            let resultMessage = `您的脉轮平均值为: ${average}。`;
+            if (average >= 8) {
+                resultMessage += " 您的脉轮状态非常好！";
+            } else if (average >= 5) {
+                resultMessage += " 您的脉轮状态一般，可以适当调整。";
+            } else {
+                resultMessage += " 您的脉轮状态较差，建议多关注身心健康。";
+            }
+
+            // 跳转到结果页面并传递结果
+            window.location.href = `result.html?message=${encodeURIComponent(resultMessage)}`;
+        }
+
+        function jumpToUnanswered() {
+            const index = document.getElementById('jumpToUnanswered').getAttribute('data-index');
+            const question = document.querySelectorAll('.question')[index];
+            question.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // 修复返回顶部按钮显示逻辑
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
