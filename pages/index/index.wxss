@@ -1,71 +1,106 @@
 .container {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px; /* 添加圆角 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 更明显的阴影 */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-size: 100%;
+  box-sizing: border-box;
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333; /* 更深的字体颜色 */
+.container image {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.form {
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: calc(100vh - 44rpx);
+  padding: 57rpx 38rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-bottom: 100rpx;
 }
 
-.question {
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0; /* 添加边框 */
-}
+
 
 .question-label {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  display: block;
+  font-weight: 400;
+  font-size: 31rpx;
+  color: #FFFFFF;
+  line-height: 46rpx;
+  text-align: left;
 }
 
 .options-group {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 70rpx;
+  margin-top: 30rpx;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px; /* 添加内边距 */
-  background: #f7f7f7; /* 添加背景色 */
-  border-radius: 5px; /* 添加圆角 */
-  transition: background-color 0.3s; /* 添加交互效果 */
+  transition: background-color 0.3s;
+  /* 添加交互效果 */
+}
+.option text{
+  font-size: 27rpx;
+  line-height: 42rpx;
+  color: #fff;
+  margin-left: 10rpx;
+}
+radio{
+  width: 32rpx;
+  height: 32rpx;
 }
 
+radio .wx-radio-input,
+radio .wx-radio-input:hover {
+  border-radius: 50%;
+  width: 32rpx;
+  height: 32rpx;
+  transform: translateY(-10rpx);
+  border: 2rpx solid #503B66;
+  background: transparent;
+  box-sizing: border-box;
+  margin-right: 10rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked {
+  background-color: #7531C7 !important;
+  border: 2rpx solid #503B66;
+  font-size: 20rpx;
+}
+
+
 .option:hover {
-  background: #eaeaea; /* 鼠标悬停效果 */
+  background:transparent;
+  /* 鼠标悬停效果 */
 }
 
 .submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007aff;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  border-radius: 8px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s; /* 添加交互效果 */
+  position: absolute;
+  left: 38rpx;
+  right: 38rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  bottom: 32rpx;
+  background: #7531C7;
+  border-radius: 23rpx 23rpx 23rpx 23rpx;
+  z-index: 10;
+  font-weight: 500;
+  font-size: 29rpx;
+  color: #FFFFFF;
 }
 
 .submit-button:hover {
-  background-color: #45a049; /* 鼠标悬停效果 */
+  background-color: #7531C7;
+  /* 鼠标悬停效果 */
 }
 
 .error-message {

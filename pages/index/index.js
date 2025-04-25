@@ -2,13 +2,13 @@ Page({
   data: {
     questions: [
       // 根轮问题
-      { name: "q1", label: "你是否通常觉得活在当下，生活十分踏实?", reverse: false, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q2", label: "你总是有掌控局势的强烈欲望?", reverse: true, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q3", label: "你担心自己的财务状况和家宅的安全?", reverse: true, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q4", label: "无论在哪里你都感觉很自在?", reverse: false, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q5", label: "你总是很有安全感?", reverse: false, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q6", label: "你依赖身边的人或者事?", reverse: true, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
-      { name: "q7", label: "你是否孤独寂寞，或者刻意与他人保持距离?", reverse: true, options: ["毫无感觉", "稍有感觉", "一般", "比较强烈", "非常强烈"] },
+      { name: "q1", label: "你是否通常觉得活在当下，生活十分踏实?", reverse: false, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q2", label: "你总是有掌控局势的强烈欲望?", reverse: true, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q3", label: "你担心自己的财务状况和家宅的安全?", reverse: true, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q4", label: "无论在哪里你都感觉很自在?", reverse: false, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q5", label: "你总是很有安全感?", reverse: false, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q6", label: "你依赖身边的人或者事?", reverse: true, options: ["没有", "很少", "偶尔", "经常", "总是"] },
+      { name: "q7", label: "你是否孤独寂寞，或者刻意与他人保持距离?", reverse: true, options: ["没有", "很少", "偶尔", "经常", "总是"] },
       // ...其他脉轮问题...
     ],
     formData: {}, // 初始化为空对象
@@ -66,7 +66,6 @@ Page({
         incompleteQuestions.push(index + 1); // 记录未选择的问题编号
       }
     });
-
     if (incompleteQuestions.length > 0) {
       this.setData({
         isFormComplete: false,

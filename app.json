@@ -4,8 +4,8 @@
     "pages/result/result"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#030B0B",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "脉轮测算",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"

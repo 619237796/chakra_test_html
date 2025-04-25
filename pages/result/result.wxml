@@ -1,9 +1,56 @@
-<view class="container">
-  <view class="result-box">
+<view class="container" style="background-image: url(../../assets/img/back.png);background-repeat: none;background-size: 100%;">
+  <image src="../../assets/img/back2.png" class='top-img' />
+  <view class="content">
+    <view class="item1">
+      <image src="../../assets/img/item1.png" class='item-img1' />
+      <view class="item-content">
+        <view wx:for="{{resultList}}" class="line">
+          <text class="text1">{{item.icon}}</text>
+          <text class="text2">{{item.name}}</text>
+          <text class="text3">{{item.value}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="item2 mat20">
+      <image src="../../assets/img/item2.png" class='item-img2' />
+      <view class="item-content">
+        <view>结合测试结果，找到需重点关注的脉轮，从失衡表现反推生活卡点；每个脉轮会随着不同的颜色而振动，佩戴对应颜色的水晶可以更好的引发共振。结合自我觉察和行动调整，获得真正的疗愈。
+        </view>
+        <view class="item-box">
+          <image src="../../assets/img/avatar.jpg" class="avatar" />
+          <view class="wx-info">
+            <view>西子happy☀️</view>
+            <view>
+            微信号：xizihappy8
+              <text class="copy-text" id="textToCopy" bindtap="copyText" data-text="1111">点击复制</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="result mat20" style="background-image: url(../../assets/img/back.png);background-repeat: repeat;background-size: 100%">
+      <view wx:for="{{resultList}}" class="r-item">
+        <view class="r-title">{{item.subName}}</view>
+        <view class="r-tag">{{item.tag}}</view>
+        <view class="r-content">位置：{{item.content.position}}</view>
+        <view class="r-content">核心主题：{{item.content.position}}</view>
+        <view class="r-content">平衡时：</view>
+        <view class="r-content">{{item.content.balance}}</view>
+        <view class="r-content">失衡时：</view>
+        <view class="r-content">→ ​能量不足：{{item.content.noenergy}}</view>
+        <view class="r-content">→ ​过度活跃：{{item.content.active}}</view>
+        <view class="r-line"></view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="result-box">
     <text class="title">测算结果</text>
     <view class="result-content">
       <canvas canvas-id="chakraCanvas" style="width: 300px; height: 300px;"></canvas>
     </view>
     <button class="back-button" bindtap="goBack">返回</button>
-  </view>
+  </view> -->
+
 </view>

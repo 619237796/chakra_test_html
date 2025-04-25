@@ -1,19 +1,21 @@
 <view class="container">
-  <text class="title">脉轮测算</text>
-  <form bindsubmit="onSubmit">
-    <block wx:for="{{questions}}" wx:key="name">
-      <view class="question">
-        <text class="question-label">{{item.label}}</text>
-        <radio-group class="options-group" data-name="{{item.name}}" bindchange="onOptionChange">
-          <block wx:for="{{item.options}}" wx:key="index">
-            <label class="option">
-              <radio value="{{index}}" checked="{{formData[item.name] == (index + 1)}}" />
-              <text>{{item}}</text>
-            </label>
-          </block>
-        </radio-group>
-      </view>
-    </block>
-    <button formType="submit" class="submit-button">提交</button>
-  </form>
+<image src="../../assets/img/back.png"/>
+  <view class="form">
+    <form >
+      <block wx:for="{{questions}}" wx:key="name">
+        <view class="question">
+          <text class="question-label">{{item.label}}</text>
+          <radio-group class="options-group" data-name="{{item.name}}" bindchange="onOptionChange">
+            <block wx:for="{{item.options}}" wx:key="index">
+              <label class="option">
+                <radio value="{{index}}" checked="{{formData[item.name] == (index + 1)}}" />
+                <text>{{item}}</text>
+              </label>
+            </block>
+          </radio-group>
+        </view>
+      </block>
+    </form>
+  </view>
+  <button class="submit-button" bind:tap="onSubmit">提交</button>
 </view>

@@ -1,0 +1,5 @@
+<view class="menu-container">
+  <text class="menu-title">{{title}}</text>
+  <button class="menu-button" bindtap="getUserProfile">获取用户信息</button>
+  <button class="menu-button" bindtap="goToChakraTest">开始脉轮测试</button>
+</view>
