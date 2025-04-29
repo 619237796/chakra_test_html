@@ -1,7 +1,8 @@
 Page({
   data: {
     message: "",
-    resultList: [{
+    resultList: [
+      {
         icon: '🌍',
         name: '海底轮',
         subName: '根轮（海底轮）',
@@ -106,42 +107,43 @@ Page({
       message: decodeURIComponent(options.message)
     });
     const scores = options.scores.split(',').map(Number); // 获取分值数组
-    this.setResult(scores)
+    this.setResult(scores);
   },
-  //设置结果分数
-  setResult(arr){
-    //对应分数的文字改一下 阻塞 正常开启 平衡啥的    
-    let resultText = ['1分文字','2分文字','3分文字','4分文字','5分文字']
-    arr.forEach((item,index)=>{
-      let resultList = this.data.resultList
-      resultList[index].value = resultText[parseInt(item)-1]
+  setResult(arr) {
+    let resultText = ['不活跃', '正常', '过度活跃'];
+    arr.forEach((item, index) => {
+      let resultList = this.data.resultList;
+      let idx = -1;
+      if (item >= 8 && item <= 20) {
+        idx = 0; // 阻塞
+      } else if (item >= 21 && item <= 34) {
+        idx = 1; // 正常开启
+      } else if (item >= 35 && item <= 40) {
+        idx = 2; // 活跃
+      }
+      resultList[index].value = resultText[idx];
       this.setData({
-        resultList:resultList
-      })
-    })
+        resultList: resultList
+      });
+    });
   },
-  //返回
   goBack() {
     wx.reLaunch({
       url: '/pages/index/index'
     }); // 返回并重新加载 index 页
   },
-  // 复制
-  copyText: function(e) {
+  copyText(e) {
     var textToCopy = e.target.dataset.text;
-    // 使用 wx.setClipboardData 将文本复制到剪贴板
     wx.setClipboardData({
       data: textToCopy,
-      success: function(res) {
-        // 复制成功后显示提示信息
+      success: function () {
         wx.showToast({
           title: '复制成功',
           icon: 'success',
           duration: 2000
         });
       },
-      fail: function(err) {
-        // 复制失败时显示错误信息
+      fail: function () {
         wx.showToast({
           title: '复制失败',
           icon: 'none',
@@ -149,6 +151,5 @@ Page({
         });
       }
     });
-  },
-  
+  }
 });
